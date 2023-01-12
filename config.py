@@ -1,0 +1,4 @@
+currentlyLoggedInUsername = ""
+currentlyLoggedInData = ""
+
+username = ""
