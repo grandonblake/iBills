@@ -1,5 +1,7 @@
 # iBills
-An Online Billing System | 3rd Year Final Project (Python)
+A simple locally-hosted web-based Online Billing System implementing the Python Flask framework while using HTML and CSS for the webpages and XAMPP MySQL for the database.
+
+This project was a group effort that was submitted on Sep 22, 2022 as a Final Project requirement during my 3rd year in College.
 
 ## About
 In the recent century, waste paper has been a problem for individuals and the environment. Thus, the researchers developed an online platform for all bills that provides online payment, bill organization, and access to transaction history that will limit the creation of paper and the inconvenience that transportation brings. The application developed can register users into the platform on where they can view the details of an ongoing bill and pay it using a wide variety of payment options. Bill Providers can also use the platform as means to deliver bill details and validate transactions. To develop the application, the Python Flask framework was implemented which was connected to a MySQL database. The developers, therefore, conclude that this application will not only help contribute to the reduction of paper waste and pollution but will also protect consumers and workers in the sector from such dangerous chemicals. It will also improve the convenience and comfortability of customers using the all-in-one application as they do not leave the vicinity to pay their bills.
