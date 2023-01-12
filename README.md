@@ -47,3 +47,10 @@ The application will be limited to the following extent:
 ### Software
 The software used to develop the platform is Visual Studio Code. The developers used the Python language to implement the Flask framework and HTML and CSS as with the help of Adobe Photoshop for the system design. The Python under the Flask framework acted as the Back End of the system which connected the pages involved while the HTML was responsible for creating the Front End of the system on where CSS was used to design and stylize and help make an interactive user interface. The programmers also use the application called XAMPP that is responsible for manipulating the data using the MySQL database. The Command Prompt was also used to run the program locally.
 
+### Use Case
+<img src="/screenshots/UseCase.png" width=50% height=50%>
+
+### Data Model
+<img src="/screenshots/DataModel.png" width=50% height=50%>
+
+## Project Screenshots
