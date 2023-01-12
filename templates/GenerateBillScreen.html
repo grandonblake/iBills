@@ -1,0 +1,124 @@
+<head>
+    <title>Generate Bill</title>
+    <link rel="icon" type="image/jpg" href="static/images/Logo.png">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/GenerateBillScreenStyle.css">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+    <body>
+        <div id="side-menu" class="sideMenu">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="mainMenu">
+            <a href="/BillProviderMainMenuScreen"><i class="fa fa-desktop"></i>Dashboard</a>
+            <a href="/ValidatePaymentsScreen"><i class="fa fa-address-card-o"></i>Validate Payments</a>
+            <a href="/GenerateBillScreen"><i class="fa fa-credit-card"></i>Generate Bills</a>
+            <a href=""><i class="fa fa-bell-o"></i>Notifications</a>
+            <a href=""><i class="fa fa-headphones"></i>Support</a>
+            <hr>
+            <a href=""><i class="fa fa-cogs"></i>Settings</a>
+            <a href=""><i class="fa fa-question-circle-o"></i>Help</a>
+            <a href="/"><i class="fa fa-sign-out"></i>SIGN OUT</a>
+            </div>
+        </div>
+    
+        <div id="menu-area">
+            <span class="menuBar" style="font-size: 1.75rem; cursor: pointer" onclick="openNav()"> &#9776; </span>
+                <div class="logo">
+                    <img src="static/images/Logo.png" alt="LogoWhite" class="logoImg">
+                    <h1> iBills </h1> 
+                </div>
+        </div>
+
+        <div class="name">
+            <div class="nameIcon">
+                <p class="userName">{{currentlyLoggedIn['billerName']}}</p>
+                <img src="static/images/Bill_Provider_Icon.png" class="userIcon">
+            </div>
+            <p class="unknownLabel">{{currentlyLoggedIn['id']}}</p>
+        </div>  
+
+        <div>
+            <p class="generateBillLabel">Generate Bill</p>
+            <p class="line">____________________________________________________________________________________________________</p>
+
+            <p class="billForm">Bill Form</p>
+            <p class="pharagraph1">Fill out the bill form below to generate bill. Click submit button if all <br>elements are filled out.</p>
+        </div>
+
+        <div class ="alerts">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <span>{{ message }}</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+        
+        <div class="leftPanel"></div>
+        
+        <form action="/GenerateBillScreenGetUser" method="POST">
+            <p class="accountNoLabel">Account ID & Username</p>
+            <select name="userInput" id="userInput" class="accountNoInput" required>
+                <option selected></option>
+                {% for record in users %}
+                <option value="{{record['username']}}" {%if record['username']==username2 %} selected="selected" {%endif%}>{{record["id"]}} - {{record["username"]}}</option>
+                {%endfor%}
+            </select>
+            <input type="submit" value="Get User" class="getUserButton">
+        </form>
+
+        <p class="SubsciberLabel">Subscriber Name</p>
+        <input type="text" class="SubsciberInput" value="{%for record2 in selectedUser%} {{record2['firstName']}} {{record2['lastName']}} {%endfor%}" readonly>
+
+        <p class="SubscriberAddress">Subscriber Address</p>
+        <input type="text" class="SubscriberAddressInput" value="{%for record2 in selectedUser%} {{record2['address']}} {%endfor%}" readonly>
+
+        <form action="/GenerateBillScreenCreateBill" method="POST">
+            <p class="BillingPeriodLabel">Billing Period</p>
+            <input type="date" name="inputBillingPeriodFrom" class="fromInput" required>
+            <input type="date" name="inputBillingPeriodTo" class="toInput" required>
+
+            <p class="BillingDueLabel">Billing Due</p>
+            <input type="date" name="inputBillingDue" class="BillingDueInput" required>
+
+            <p class="consumptionLabel">Monthly Consumption</p>
+            <input type="text" name="inputMonthlyConsumption" class="consumptionInput" minlength="2" required/>
+        
+            <p class="billAmountLabel">Bill Amount</p>
+            <input type="number" name="inputBillAmount" class="billAmountInput" placeholder="₱" minlength="2" required/>
+        
+            <input type="submit" name="createBillButton" class="submitButton" value="Create Bill">
+
+        </form>
+
+        <script>
+            function openNav(){
+                document.getElementById("side-menu").style.width = "250px";
+                document.getElementById("menu-area").style.marginLeft = "50px";
+            }
+
+            function closeNav(){
+                document.getElementById("side-menu").style.width = "0";
+                document.getElementById("menu-area").style.marginLeft = "0";
+            }
+        </script>
+    </body>

@@ -1,0 +1,193 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+    <link rel="icon" type="image/jpg" href="static/images/Logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/styles/MainMenuScreenStyle.css">
+</head>
+
+<body>
+    <div id="side-menu" class="sideMenu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="mainMenu">
+            <a href="/MainMenuScreen"><i class="fa fa-desktop"></i>Dashboard</a>
+            <a href="/ProfileScreen"><i class="fa fa-address-card-o"></i>Profile</a>
+            <a href=""><i class="fa fa-bell-o"></i>Notifications</a>
+            <a href=""><i class="fa fa-headphones"></i>Support</a>
+            <hr>
+            <a href=""><i class="fa fa-cogs"></i>Settings</a>
+            <a href=""><i class="fa fa-question-circle-o"></i>Help</a>
+            <a href="/"><i class="fa fa-sign-out"></i>SIGN OUT</a>
+        </div>
+    </div>
+
+    <div id="menu-area">
+        <span class="menuBar" style="font-size: 1.75rem; cursor: pointer" onclick="openNav()"> &#9776; </span>
+            <div class="logo">
+                <img src="static/images/Logo.png" alt="LogoWhite" class="logoImg">
+                <h1> iBills </h1>
+    </div>
+
+    <div class="name">
+        <div class="nameIcon">
+            <p class="userName">{{currentlyLoggedIn['firstName']}} {{currentlyLoggedIn['lastName']}}</p>
+            <img src="static/images/UserIcon.png" class="userIcon">
+        </div>
+        <p class="unknownLabel">{{currentlyLoggedIn['id']}}</p>
+    </div>  
+
+    <div class="contentArea">
+        <div class="box1">
+            <div class="box1text1">
+                <p> TOTAL BILLS TO PAY </p>
+            </div>
+            <div class="box1text2">
+                <h1> ₱ {{totalBillsSum}} </h1>
+            </div>
+        </div>
+
+        {% if billNearDeadline %}
+
+        <div class="box2">
+            <form action = "/BillingDetailsScreen" method="POST">
+                <div class="box2text1">
+                    <p> NEARING BILL DEADLINE </p>
+                </div>
+                <input type="text" name="billAmount" class="box2text2" value="₱ {{billNearDeadline['billAmount']}}" readonly>
+                <hr>
+                <input type="text" name="billerName" class="box2text3" value="{{billProvider2['billerName']}}" readonly>
+                <input type="text" name="dateDue" class="box2text4" value="due on {{billNearDeadline['dateDue']}}" readonly>
+                <label for="box2refNum" style="color:black; font-size:16px; left:110px; top:-150px; position:relative; font-weight: bold;">Reference #:</label>
+                <input type="text" name="refNumber" class="box2refNum" id="box2refNum" value="{{billNearDeadline['referenceNo']}}" readonly required>
+                <input type="submit" name="deadlinePayButton" class="box2button" value="Pay Now" readonly>
+            </form>
+        </div>
+
+        {%endif%}
+
+    </div>
+
+    <div style="border-left:1px solid #000;height:35px;
+    position: absolute; left: 51%; top: 16%;"></div>
+
+    <div class="tabs">
+
+        <div class="tab">
+            <input type="radio" id="tab-1" name="tab-group-1" checked>
+            <label for="tab-1">Current Bills</label>
+                
+            <div class="content">
+                {% if numberOfBills != 0 %}
+
+                    {%for record2 in bills %}
+
+                        {% if record2['billerUsername'] == 'meralco' %}
+                            {%set billerUsername = 'Manila Electric Company'%}
+                            {%set billerTypeOfService = 'Electricity'%}
+                        {%endif%}
+                        {% if record2['billerUsername'] == 'manilawater' %}
+                            {%set billerUsername = 'Manila Water'%}
+                            {%set billerTypeOfService = 'Water Utility'%}
+                        {%endif%}
+                        {% if record2['billerUsername'] == 'pldt' %}
+                            {%set billerUsername = 'PLDT'%}
+                            {%set billerTypeOfService = 'Internet'%}
+                        {%endif%}
+                    
+                    <div class="currentBillsHeader">
+                        <div class="cbText1">Ref. No.</div>
+                        <div class="cbText2">Bill Provider</div>
+                        <div class="cbText3">Service</div>
+                        <div class="cbText4">Billing Period</div>
+                        <div class="cbText5">Billing Due</div>
+                        <div class="cbText6">Amount</div>
+                    </div>
+
+                        <form action = "/BillingDetailsScreen" method="POST">
+                            <div class="currentBillsContent">
+                                <input type="submit" name="payButton" class="payButton" value="Pay Now">
+                                <input type="text" name="refNumber" class="cbCText1" value="{{record2['referenceNo']}}" readonly>
+                                <input type="text" name="billerUsername" class="cbCText2" value="{{billerUsername}}" readonly>
+                                <input type="text" name="service" class="cbCText3" value="{{billerTypeOfService}}" readonly>
+                                <input type="text" name="billingPeriod" class="cbCText4" value="{{record2['billingPeriod']}}" readonly>
+                                <input type="text" name="dateDue" class="cbCText5" value="{{record2['dateDue']}}" readonly>
+                                <input type="text" name="billAmount" class="cbCText6" value="₱ {{record2['billAmount']}}" readonly>
+                            </div>
+                        </form> 
+
+                    {% endfor %}
+                {% else %} 
+                    <div class="emptyBills">
+                        <img src="static/images/EmptyCurrentBillsIcon.png">
+                        <h1>There are currently no Bills</h1>
+                    </div>
+                {%endif%}
+
+            </div>
+        </div>
+        
+        <div class="tab">
+            <input type="radio" id="tab-2" name="tab-group-1">
+            <label for="tab-2">Payment History</label>
+            <div class="content">
+                {% if numberOfBills2 != 0 %}
+
+                    {%for record3 in bills2 %}
+
+                        {% if record3['billerUsername'] == 'meralco' %}
+                            {%set billerUsername = 'Manila Electric Company'%}
+                            {%set billerTypeOfService = 'Electricity'%}
+                        {%endif%}
+                        {% if record3['billerUsername'] == 'manilawater' %}
+                            {%set billerUsername = 'Manila Water'%}
+                            {%set billerTypeOfService = 'Water Utility'%}
+                        {%endif%}
+                        {% if record3['billerUsername'] == 'pldt' %}
+                            {%set billerUsername = 'PLDT'%}
+                            {%set billerTypeOfService = 'Internet'%}
+                        {%endif%}
+
+                <div class="paymentHistoryHeader">
+                    <div class="phText1">Ref. No.</div>
+                    <div class="phText2">Bill Provider</div>
+                    <div class="phText3">Service</div>
+                    <div class="phText4">Billing Period</div>
+                    <div class="phText5">Amount</div>
+                    <div class="phText6">Validated?</div>
+                </div>
+
+                <div class="paymentHistoryContent">
+                    <input type="text" name="PHRefNo" class="phCText1" value="{{record3['referenceNo']}}" readonly>
+                    <input type="text" name="PHBillerUsername" class="phCText2" value="{{billerUsername}}" readonly>
+                    <input type="text" name="PHService" class="phCText3" value="{{billerTypeOfService}}" readonly>
+                    <input type="text" name="PHBillingPeriod" class="phCText4" value="{{record3['billingPeriod']}}" readonly>
+                    <input type="text" name="PHBillAmount" class="phCText5" value="₱ {{record3['billAmount']}}" readonly>
+                    <input type="text" name="PHValidated" class="phCText6" value="{{record3['validated']}}" readonly>
+                </div>
+
+                {% endfor %}
+            {% else %} 
+                <div class="emptyPayment">
+                    <img src="static/images/EmptyPaymentsHistoryIcon.png">
+                    <h1>Empty Payments History</h1>
+                </div> 
+            {%endif%}
+
+            </div>
+        </div>
+    </div>
+        
+    <script>
+        function openNav(){
+            document.getElementById("side-menu").style.width = "250px";
+            document.getElementById("menu-area").style.marginLeft = "50px";
+        }
+
+        function closeNav(){
+            document.getElementById("side-menu").style.width = "0";
+            document.getElementById("menu-area").style.marginLeft = "0";
+        }
+    </script>
+</body>

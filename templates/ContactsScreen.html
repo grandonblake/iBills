@@ -1,0 +1,225 @@
+<head>
+    <title>Contacts</title>
+    <link rel="icon" type="image/jpg" href="static/images/Logo.png">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .header{
+        height: 100vh;
+        width: 100%;
+        padding: 0 3%;
+        position: relative;
+        
+    }
+    /* Navbar */
+    nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding-left: 20;
+    }
+
+    .nav-links{
+        padding:28px 0;
+    }
+
+    .nav-links li{
+        display: inline-block;
+        margin: 0 15px;
+    }
+
+    .nav-links li a {
+    color: #2c245f;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+    }
+
+    .nav-links li a::after{
+        content: '';
+        background: black;
+        width: 0;
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: width 0.5s;
+    }
+
+    .nav-links li a:hover::after{
+        width: 100%;
+    }
+    .nav-links li a.active {
+    background-color: lightgray;
+    color: #2c245f;
+    border-radius: 20px;
+    height: 25px;
+    }
+
+    .header img{
+        height: 45px;
+        width: 55px;
+        display: inline-block;
+    }
+    .header h1{
+        top: 18px;
+        left: 10px;
+        text-decoration: none;
+        color: #2c245f;
+        font-size: 24px;
+        display: inline-block;
+        margin-right: 1100;
+    }
+
+    /* Contents*/
+
+    .blueLine{
+        position: absolute;
+        background-color: #0c77bd;
+        width: 57%;
+        height: 3%;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        left: 43%;
+    }
+
+    .contentContacts{
+        position: absolute;
+        background-color: #0c77bd;
+        height: 48%;
+        width: 38%;
+        top: 50%;
+        border-radius: 15px;
+    }
+   
+    .contentPanel{
+        
+        position: absolute;
+        top: 12%;
+        height: 60%;
+        left: 40%;
+        width: 60%;
+    }
+
+   
+   .contentDetails{
+        position: absolute;
+        color:#2c245f; 
+        font-weight: bold; 
+        font-size: 20px;
+   }
+
+   .contentField{
+    position: absolute;
+    outline: 0;
+    border-top-style: hidden;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    border-bottom-color: gray;
+    border-bottom-width: 3px;
+    border-radius: 2px;
+    width: 40%;
+    padding-bottom: 20px;
+    font-size: 36px;
+    color: gray;
+   }
+
+   .contentButton{
+    position: absolute;
+    top: 120%;
+    left: 60%;
+    background-color: #0c77bd;
+    color: white;
+    outline: 0;
+    border-radius: 10px;
+    height: 13%;
+    width: 30%;
+    border-color: #0c77bd;
+    font-size: 28px;
+   }
+
+   .contentFieldMessage{
+    position: absolute;
+    outline: 0;
+    border-top-style: hidden;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    border-bottom-color: gray;
+    border-bottom-width: 3px;
+    border-radius: 2px;
+    width: 85%;
+    padding-bottom: 20px;
+    font-size: 36px;
+    color: gray;
+   }
+   
+   .contentContactFont{
+    position: absolute;
+    color: white;
+    left: 7%;
+    font-size: 165%;
+   }
+</style>
+<!----------------------------------------------------------------Body---------------------------------------------------------------->
+<body>
+    <div class="header">
+        <nav>
+            <img src="/static/images/Logo.png" alt="LogoWhite">
+            <h1> iBills </h1>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/AboutScreen">About</a></li>
+                <li><a href="/ServicesScreen">Services</a></li>
+                <li><a class="active" href="/ContactsScreen">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="blueLine"></div>
+
+        <div class="contentPanel">
+            <p class="contentDetails" style="left: 5%; top: 3%;">First Name</p>
+            <input id="fname" class="contentField" type="text" style="top:10%; left: 5%;">
+
+            <p class="contentDetails" style="left: 50%; top: 3%;">Last Name</p>
+            <input id="lname" class="contentField" type="text" style="top:10%; left: 50%;">
+
+            <p class="contentDetails" style="top: 33%; left: 5%;">Email</p>
+            <input id="email" class="contentField" type="text" style="top:40%; left: 5%;">
+
+            <p class="contentDetails" style="top: 33%; left: 50%;">Phone Number</p>
+            <input id="PNumber" class="contentField" type="text" style="top:40%; left: 50%;">
+
+            <p class="contentDetails" style="top: 63%; left: 5%;">Message</p>
+            <textarea placeholder="Write your message here..." rows="2" cols="50" id="message" class="contentFieldMessage" type="text" style="top:70%; left: 5%; padding-bottom: 10%;"></textarea>
+        
+            <button type="button" class="contentButton">Submit</button>
+        </div>
+
+      <div>
+        <img src="/static/images/ContactsScreenVector.png" style="position: absolute; top: 10%; height:51%; width: 38%;">
+        <div class="contentContacts">
+            <p class="contentContactFont" style="font-size:48px; font-weight: bold; top: 5%;">Contact Information</p>
+            <p class="contentContactFont" style="top: 19%; font-size: 24px;">Fill up the form and our Team will get back to you <br>within 24 hours.</p>
+           
+            <img src="/static/images/ContactsIcon.png" style="position: absolute; top: 45%; left: 7%; height: 7%; width: 4%;">
+            <p class="contentContactFont" style="top: 45%; left: 17%">+63 900 123 8404</p>
+
+            <img src="/static/images/EmailIcon.png" style="position: absolute; top: 63%; left: 7%; height: 7%; width: 4%;">
+            <p class="contentContactFont" style="top: 63%; left: 17%">iBillsPH@gmail.com</p>
+
+            <img src="/static/images/LocationIcon.png" style="position: absolute; top: 81%; left: 7%; height: 7%; width: 4%;">
+            <p class="contentContactFont" style="top: 81%; left: 17%">Manila, Philippines</p>
+        </div>
+
+    </div>
+</body>

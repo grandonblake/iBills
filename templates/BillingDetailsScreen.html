@@ -1,0 +1,281 @@
+<head>
+	<title>Billing Details</title>
+    <link rel="icon" type="image/jpg" href="static/images/Logo.png">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/BillingDetailsScreenStyle.css">
+</head>
+<body>
+
+    <div id="side-menu" class="sideMenu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="mainMenu">
+            <a href="/MainMenuScreen"><i class="fa fa-desktop"></i>Dashboard</a>
+            <a href="/ProfileScreen"><i class="fa fa-address-card-o"></i>Profile</a>
+            <a href="#"><i class="fa fa-bell-o"></i>Notifications</a>
+            <a href="#"><i class="fa fa-headphones"></i>Support</a>
+            <hr>
+            <a href="#"><i class="fa fa-cogs"></i>Settings</a>
+            <a href="#"><i class="fa fa-question-circle-o"></i>Help</a>
+            <a href="/"><i class="fa fa-sign-out"></i>SIGN OUT</a>
+        </div>
+    </div>
+
+    <div id="menu-area">
+        <span class="menuBar" style="font-size: 1.75rem; cursor: pointer" onclick="openNav()"> &#9776; </span>
+            <div class="logo">
+                <img src="static/images/Logo.png" alt="LogoWhite" class="logoImg">
+                <h1> iBills </h1>
+    </div>
+
+    <div class="name">
+        <div class="nameIcon">
+            <p class="userName">{{firstName}} {{lastName}}</p>
+            <img src="static/images/UserIcon.png" class="userIcon">
+        </div>
+        <p class="unknownLabel">{{userID}}</p> 
+    </div>  
+    <div>
+        <p class="BillingDetailsLbl">Billing Details</p> 
+    </div>
+        
+    <div class="BillingDetailsPanel">
+            <p class="CompanyLabel">Bill Provider</p>
+            <p class="ServiceLabel">Service</p>
+            <p class="BillingPeriodLabel">Billing Period</p>
+            <p class="DueLabel">Billing Due</p>
+            <p class="ConsumptionLabel">Actual Consumption</p>
+            
+            <p class="CompanyName">{{billProvider['billerName']}}</p>
+            <p class="ServiceName">{{billProvider['typeOfService']}}</p>
+            <p class="BillingPeriod">{{billDetails['billingPeriod']}}</p>
+            <p class="BillingDue">{{billDetails['dateDue']}}</p>
+            <p class="Consumption">{{billDetails['billConsumption']}}</p>
+    </div>
+    
+    <div class="PaymentMethodPanel">
+            <p class="PaymentMethodLabel">Payment Method</p>
+            <div type="button" class="CreditCardPanel"  onclick="creditcardActive()" id="creditcardActive">
+                <img src="static/images/creditCardIcon.png" class="CreditCardIcon">
+            </div>
+                
+            <div type="button" class="PayPalPanel" onclick="paypalActive()" id="paypalActive">
+                <img src="static/images/PayPal_Icon.png" class="PayPalIcon">
+            </div> 
+                
+            <div type="button" class="GcashPanel" onclick="gcashActive()" id="gcashActive">
+                <img src="static/images/Gcash_Icon.png" class="GcashIcon">
+            </div>
+                
+            <div type="button" class="AmericanExpressPanel" onclick="amexActive()" id="amexActive">
+                <img src="static/images/Amex_Icon.png" class="AMEXIcon">
+            </div>
+                
+            <div type="button" class="PayMayaPanel"  onclick="mayaActive()" id="mayaActive">
+                <img src="static/images/maya_icon.png" class="PayMayaIcon">
+            </div>
+                
+            <div type="button" class="BitcoinPanel"  onclick="bitcoinActive()" id="bitcoinActive">
+                <img src="static/images/Bitcoin_icon.png" class="BitcoinIcon">
+            </div>  
+    </div>
+
+    <form action="/BillingDetailsScreenPay" method="POST">
+
+    <div class="ReferenceNoPanel">
+        <p class="ReferenceNoLabel">Reference No.</p>
+        <input name="refNumber" type="text" class="ReferenceNo" readonly value="{{billDetails['referenceNo']}}">
+
+        <button disabled type="button" class="PayBtn" onclick="openPopup(); paybutton()"  id="payButton">Pay</button>
+
+        <div class="AmountPanel">
+            <p class="TotalAmtLabel">Total Amount</p>
+            <p class="Amount">₱ {{billDetails['billAmount']}}</p>
+        </div>
+    </div>
+            
+    <div class="popup" id="popup">
+        <img src="static/images/confirmPaymentPerson.png">
+        <h1>Confirm Payment</h1>
+        <div type="button" class="ConfirmBtn" onclick="openPopup2()">Confirm</div>
+        <div type="button" class="CancelBtn" onclick="closePopup()">Cancel</div>
+    </div> 
+
+    <div class="popup2" id="popup2">
+        <h1>Thank you for using iBills!</h1>
+        <input type="submit" class="BackBtn" onclick="closePopup2()" value="Go back to Dashboard">
+    </div>
+    </form>
+
+    <script>
+        function openNav(){
+            document.getElementById("side-menu").style.width = "250px";
+            document.getElementById("menu-area").style.marginLeft = "50px";
+        }
+
+        function closeNav(){
+            document.getElementById("side-menu").style.width = "0";
+            document.getElementById("menu-area").style.marginLeft = "0";
+        }
+
+        function creditcardActive() {  
+            var x = document.getElementById("creditcardActive");
+            if (x.style.borderColor = "#5294e2"){
+                var x = document.getElementById("paypalActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("gcashActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("amexActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("mayaActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("bitcoinActive");
+                (x.style.borderColor = "#b9b9b9");
+            }
+            var x = document.getElementById("creditcardActive");
+            if (x.style.borderColor = "#5294e2"){
+                var x = document.getElementById("payButton");
+                (x.style.borderColor = "#5294e2");
+                (x.style.backgroundColor = "#5294e2");
+                document.getElementById("payButton").disabled = false;
+            }
+        } 
+
+        function paypalActive() {
+            var x = document.getElementById("paypalActive");
+            if (x.style.borderColor = "#5294e2"){
+                var x = document.getElementById("creditcardActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("gcashActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("amexActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("mayaActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("bitcoinActive");
+                (x.style.borderColor = "#b9b9b9");
+            }
+            var x = document.getElementById("paypalActive");
+            if (x.style.borderColor = "#5294e2"){
+                var x = document.getElementById("payButton");
+                (x.style.borderColor = "#5294e2");
+                (x.style.backgroundColor = "#5294e2");
+                document.getElementById("payButton").disabled = false;
+            }         
+        } 
+
+        function gcashActive() {
+            var x = document.getElementById("gcashActive");
+            if (x.style.borderColor = "#5294e2"){
+                var x = document.getElementById("creditcardActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("paypalActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("amexActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("mayaActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("bitcoinActive");
+                (x.style.borderColor = "#b9b9b9");
+            }
+            var x = document.getElementById("gcashActive");
+            if (x.style.borderColor = "#5294e2"){
+                var x = document.getElementById("payButton");
+                (x.style.borderColor = "#5294e2");
+                (x.style.backgroundColor = "#5294e2");
+                document.getElementById("payButton").disabled = false;
+            } 
+        } 
+
+        function amexActive() {
+            var x = document.getElementById("amexActive");
+            if (x.style.borderColor = "#5294e2"){
+                var x = document.getElementById("creditcardActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("paypalActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("gcashActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("mayaActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("bitcoinActive");
+                (x.style.borderColor = "#b9b9b9");
+            }
+            var x = document.getElementById("amexActive");
+            if (x.style.borderColor = "#5294e2"){
+                var x = document.getElementById("payButton");
+                (x.style.borderColor = "#5294e2");
+                (x.style.backgroundColor = "#5294e2");
+                document.getElementById("payButton").disabled = false;
+            }
+        } 
+
+        function mayaActive() {
+            var x = document.getElementById("mayaActive");
+            if (x.style.borderColor = "#5294e2"){
+                var x = document.getElementById("creditcardActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("paypalActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("gcashActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("amexActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("bitcoinActive");
+                (x.style.borderColor = "#b9b9b9");
+            }
+            var x = document.getElementById("mayaActive");
+            if (x.style.borderColor = "#5294e2"){
+                var x = document.getElementById("payButton");
+                (x.style.borderColor = "#5294e2");
+                (x.style.backgroundColor = "#5294e2");
+                document.getElementById("payButton").disabled = false;
+            }
+        } 
+
+        function bitcoinActive() {
+            var x = document.getElementById("bitcoinActive");
+            if (x.style.borderColor = "#5294e2"){
+                var x = document.getElementById("creditcardActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("paypalActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("gcashActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("amexActive");
+                (x.style.borderColor = "#b9b9b9");
+                var x = document.getElementById("mayaActive");
+                (x.style.borderColor = "#b9b9b9");
+            }
+            var x = document.getElementById("bitcoinActive");
+            if (x.style.borderColor = "#5294e2"){
+                var x = document.getElementById("payButton");
+                (x.style.borderColor = "#5294e2");
+                (x.style.backgroundColor = "#5294e2");
+                document.getElementById("payButton").disabled = false;
+            }
+        } 
+
+        let popup = document.getElementById("popup");
+
+        function openPopup(){
+                popup.classList.add("open-popup");
+        }
+
+        function closePopup(){
+            popup.classList.remove("open-popup");
+        }
+
+        let popup2 = document.getElementById("popup2");
+            
+        function openPopup2(){
+            popup2.classList.add("open-popup2");
+            popup.classList.remove("open-popup");
+        }
+
+        function closePopup2(){
+            popup2.classList.remove("open-popup2");
+        }
+        
+    </script>
+</body>

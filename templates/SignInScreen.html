@@ -1,0 +1,112 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="icon" type="image/jpg" href="static/images/Logo.png">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/styles/SignInScreenStyle.css">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+    <section class="content">
+        <div class="welcome">
+            <article>
+                <h1>WELCOME TO</h1>
+                <img src="static/images/Logo.png" alt="Logo">
+                <h2>iBills</h2>
+                <p>Log in now to enjoy the hassle-free bills payment options</p>
+                <form action="/SignInScreen" method="POST">
+                    <div class="inputContainer1">
+                        <i class="fa fa-user-o"></i>
+                        <input class="inputField" type="text" name="username" placeholder="Username">
+                    </div>
+
+                    <div class="inputContainer2" >
+                        <i class="fa fa-lock"></i>
+                        <input class="inputField" type="password" name="password" placeholder="Password">
+                    </div>
+
+                    <button type="Submit" class="button">SIGN IN</button>
+                    <div class="signUp">
+                        <p> Don't have an account? </p>
+                        <a href="/SignUpScreen"> Sign Up Now </a>
+                    </div>
+                </form>
+
+                <hr size="1px" width="100%" color="#696969">
+                <div class="or">
+                    <h1> Or </h1>
+                    <hr size="1px" width="100%" color="#696969">
+                </div>
+
+                <div class="socialMedia">
+                    <p> Continue with social media </p>
+                </div>
+
+                <div class="icon1">
+                    <a href="">
+                    <img src="static/images/FbIcon.png" alt="FB Icon" style="width:100%">
+                    </a>
+                </div>
+                <div class="icon2">
+                    <a href="">
+                    <img src="static/images/TwitterIcon.png" alt="Twitter Icon" style="width:100%">
+                    </a>
+                </div>
+                <div class="icon3">
+                    <a href="">
+                    <img src="static/images/gmailIcon.png" alt="Gmail Icon" style="width:100%">
+                    </a>
+                </div>
+            </article>
+            <div class ="alerts">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <span>{{ message }}</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+        <div class="background">
+            <article>
+                <div class="backgroundImg">
+                    <img src="static/images/bgc.png" alt="Background Image">
+                </div>
+                <div class="logoWhite">
+                    <img src="static/images/LogoWhite.png" alt="White Logo">
+                </div>
+                <div class="text">
+                    <h1> <span>iBills</span></h1>
+                    <span><h2> Pay Anytime, Anywhere Hassle-Free! </h2></span>
+                    <p><span>Lorem ipsum dolor sit amet, consectetur adipiscing</span> 
+                        <span>elit, sed do eiusmod tempor incididunt ut labore et</span> 
+                        <span>dolore magna aliqua. Ut enim ad minim veniam, quis</span> 
+                        <span>nostrud exercitation ullamco laboris nisi ut aliquip ex </span>
+                        <span>ea commodo consequat.</span>
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+    </div>
+</body>

@@ -1,0 +1,164 @@
+<head>
+    <title>Bill Provider Main Menu</title>
+    <link rel="icon" type="image/jpg" href="static/images/Logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/styles/BillProviderMainMenuScreenStyle.css">
+</head>
+
+<body>
+    <div id="side-menu" class="sideMenu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="mainMenu">
+            <a href="/BillProviderMainMenuScreen"><i class="fa fa-desktop"></i>Dashboard</a>
+            <a href="/ValidatePaymentsScreen"><i class="fa fa-address-card-o"></i>Validate Payments</a>
+            <a href="/GenerateBillScreen"><i class="fa fa-credit-card"></i>Generate Bills</a>
+            <a href=""><i class="fa fa-bell-o"></i>Notifications</a>
+            <a href=""><i class="fa fa-headphones"></i>Support</a>
+            <hr>
+            <a href=""><i class="fa fa-cogs"></i>Settings</a>
+            <a href=""><i class="fa fa-question-circle-o"></i>Help</a>
+            <a href="/"><i class="fa fa-sign-out"></i>SIGN OUT</a>
+        </div>
+    </div>
+
+    <div id="menu-area">
+        <span class="menuBar" style="font-size: 1.75rem; cursor: pointer" onclick="openNav()"> &#9776; </span>
+            <div class="logo">
+                <img src="static/images/Logo.png" alt="LogoWhite" class="logoImg">
+                <h1> iBills </h1>
+    </div>
+
+    {%if username == 'meralco'%}
+        {%set billerUsername = 'Manila Electric Company'%}
+    {%endif%}
+    {%if username == 'manilawater'%}
+        {%set billerUsername = 'Manila Water'%}
+    {%endif%}
+
+    <div class="name">
+        <div class="nameIcon">
+            <p class="userName">{{currentlyLoggedIn['billerName']}}</p>
+            <img src="static/images/Bill_Provider_Icon.png" class="userIcon">
+        </div>
+        <p class="unknownLabel">{{currentlyLoggedIn['id']}}</p>
+    </div>  
+
+    <div class="contentArea">
+        <div class="box1">
+            <div class="box1text1">
+                <p> Validate Payments </p>
+            </div>
+            <div>
+                <a href="/ValidatePaymentsScreen">
+                <input type="text" name="validateNumber" value="{{getToValidateNumberOfBills}}" class="box1text2" readonly>
+                </a>
+            </div>
+        </div>
+
+        <div class="box2">
+            <div class="box2text1">
+                <p> Generate Bill </p>
+            </div>
+           <a href="/GenerateBillScreen"> <div class="box2button">
+                <i style="font-size:16px; color: white;" class="fa">&#xf067;</i>
+            </div></a>
+        </div>
+
+        <div style="border-left:1px solid #000;height:35px;
+            position: absolute; left: 40%; top: 16%;"></div>
+    
+            <div class="tabs">
+                <div class="tab">
+                    <input type="radio" id="tab-1" name="tab-group-1" checked>
+                    <label for="tab-1">Ongoing Bills</label>
+
+                    <div class="content">
+
+                        {%if numberOfBills != 0%}
+                        
+                            <div class="currentBillsHeader">
+                                <div class="cbText1">Ref. No.</div>
+                                <div class="cbText2">Subscriber Username</div>
+                                <div class="cbText3">Billing Period</div>
+                                <div class="cbText4">Billing Due</div>
+                                <div class="cbText5">Amount</div>
+                            </div>
+        
+                            {%for record in bills %}
+                            <form>
+                                <div class="currentBillsContent">
+                                    <input type="text" name="amount" class="cbCText1" value="{{record['referenceNo']}} " readonly>
+                                    <input type="text" name="subscriberName" class="cbCText2" value="{{record['userUsername']}}" readonly>
+                                    <input type="text" name="service" class="cbCText3" value="{{record['billingPeriod']}}" readonly>
+                                    <input type="text" name="billingPeriod" class="cbCText4" value="{{record['dateDue']}}" readonly>
+                                    <input type="text" name="billingDue" class="cbCText5" value="₱ {{record['billAmount']}}" readonly>
+                                </div>
+                            </form> 
+                            {%endfor%}
+
+                            {% else %} 
+                            <div class="emptyBills">
+                                <img src="static/images/EmptyCurrentBillsIcon.png">
+                                <h1>There are currently no Ongoing Bills</h1>
+                            </div>
+
+                        {%endif%}
+    
+                    </div>
+                </div>
+                
+                <div class="tab">
+                    <input type="radio" id="tab-2" name="tab-group-1">
+                    <label for="tab-2">Transaction History</label>
+                    <div class="content">
+
+                        {%if numberOfBills2 != 0%}
+    
+                            <div class="paymentHistoryHeader"> 
+                                <div class="phText1">Ref. No.</div>
+                                <div class="phText2">Subscriber Username</div>
+                                <div class="phText3">Billing Period</div>
+                                <div class="phText4">Billing Due</div>
+                                <div class="phText5">Amount</div>
+                                <div class="phText6">Validated?</div>
+                            </div>
+
+                            {%for record2 in getPaidBillsOfCurrentlyLoggedIn%}
+        
+                            <div class="paymentHistoryContent">
+                                <div class="phCText1">{{record2['referenceNo']}}</div>
+                                <div class="phCText2">{{record2['userUsername']}}</div>
+                                <div class="phCText3">{{record2['billingPeriod']}}</div>
+                                <div class="phCText4">{{record2['dateDue']}}</div>
+                                <div class="phCText5">₱ {{record2['billAmount']}}</div>
+                                <div class="phCText6">{{record2['validated']}}</div>
+                            </div>
+
+                            {%endfor%}
+
+                            {% else %} 
+                                <div class="emptyPayment">
+                                    <img src="static/images/EmptyPaymentsHistoryIcon.png">
+                                    <h1>Empty Transaction History</h1>
+                                </div> 
+
+                        {%endif%}
+    
+                    </div>
+                </div>
+
+    <script>
+        function openNav(){
+            document.getElementById("side-menu").style.width = "250px";
+            document.getElementById("menu-area").style.marginLeft = "50px";
+        }
+
+        function closeNav(){
+            document.getElementById("side-menu").style.width = "0";
+            document.getElementById("menu-area").style.marginLeft = "0";
+        }
+    </script>
+</body>

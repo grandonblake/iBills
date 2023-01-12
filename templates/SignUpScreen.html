@@ -1,0 +1,78 @@
+<head>
+    <title>Sign Up</title>
+    <link rel="icon" type="image/jpg" href="static/images/Logo.png">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/styles/SignUpScreenStyle.css">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div>
+        <div class="blueContainer">
+            <img src="static/images/LogoWhite.png" style="position: absolute; top: 3%; left: 17%; height: 5%; width: 7%; ">
+            <p class="contentiBills">iBills</p>
+            <p class="contentPharagraph">A few clicks away from <br>having hassle-free online <br>bills payments</p>
+            <img src="static/images/SignUpScreenImage.png" style="position: absolute; top:45%; height: 55%; width: 120%; ">
+        </div> 
+    </div>
+
+    <div class="contentRegisterPanel">
+        <div>
+            <p style="position: absolute; color:#2c245f; font-family: poppins; font-weight: bold; font-size: 30px; top: 5%;">Sign Up</p>
+            <p style="position: absolute; color: gray; font-family: poppins; line-height: 20px; font-size: 14px; top: 12%;">Let's get you all set up so you can verify your personal account <br> and begin setting up your profile</p>
+            
+            <div class ="alerts">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <span>{{ message }}</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+
+            <p style="color:gray; position: absolute; top: 20%;">________________________________________________________________________________________________</p>
+        
+            <p class="contentDetails" style="color: gray; position: absolute;top: 39%; left: 65%; ">Birthdate</p>
+
+            <form action="/SignUpScreen" method="POST">
+                <input class="contentInput" style="top: 32%; left: 3%;" type="text" name="username" placeholder="Username" required minlength="2">
+                <input class="contentInput" style="top: 32%; left: 50%;" type="password" name="password" placeholder="Password" required minlength="2">
+                <input class="contentInput" style="top: 41%; left: 3%; width: 28%;" type="text" name="firstName" placeholder="First Name" required minlength="2">
+                <input class="contentInput" style="top: 41%; left: 33.5%; width: 28%;" type="text" name="lastName" placeholder="Last Name" required minlength="2">
+                <input class="contentInput" style="top: 41%; left: 64.5%; width: 27.5%;" type="date" name="birthday" required>
+                <input class="contentInput" style="top: 50%; left: 3%;" type="tel" name="contactNo" placeholder="Contact No." required minlength="2">
+                <input class="contentInput" style="top: 50%; left: 50.5%;" type="email" name="emailAddress" placeholder="Email Address" required minlength="2">
+                <input class="contentInput" style="top: 59%; left: 3%; width: 90%;" type="text" name="address" placeholder="Address" required minlength="2">
+
+                <p class="contentPolicy" style="top: 66%; left: 6%;">I agree to receive iBills emails and SMS (optional)</p>
+                <input type="checkbox" style="position: absolute; top:66.2%; left: 4%;">
+
+                <p class="contentPolicy" style="top: 69%; left: 6%;">I agree to the Terms of Services and Privacy Policy</p>
+                <input type="checkbox" style="position: absolute; top: 69.2%; left: 4%;" required>
+
+                <input type="submit" class="contentButton" style="top: 75%; left: 3%;" value="Create Account">
+            </form>
+
+            <p class="contentDetails" style="top: 82%; left: 3.5%;">Already have an account?</p>
+            <a type="button" class="contentSignIn" style="top: 82%; left: 20%;" href="/SignInScreen">Sign In</a>
+        </div>
+    </div>
+</body>
