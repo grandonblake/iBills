@@ -42,3 +42,8 @@ The application will be limited to the following extent:
 - It will only provide service to registered users and bill providers
 - It can only be run locally using a command prompt under the command ‘python app.py’
 - The database can only be accessed through XAMPP MySQL
+
+## Materials
+### Software
+The software used to develop the platform is Visual Studio Code. The developers used the Python language to implement the Flask framework and HTML and CSS as with the help of Adobe Photoshop for the system design. The Python under the Flask framework acted as the Back End of the system which connected the pages involved while the HTML was responsible for creating the Front End of the system on where CSS was used to design and stylize and help make an interactive user interface. The programmers also use the application called XAMPP that is responsible for manipulating the data using the MySQL database. The Command Prompt was also used to run the program locally.
+
