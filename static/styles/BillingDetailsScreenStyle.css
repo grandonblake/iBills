@@ -1,0 +1,623 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+} 
+
+.header{
+    height: 100vh;
+    width: 100%;
+    padding: 0 3%;
+    position: relative;    
+} 
+
+/* sidebar menu */
+.sideMenu{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: lightgray;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 6.25rem;
+}
+
+    .menuBar{
+        display: inline-flex;
+        padding-left: 3rem;
+    }
+
+    .logoImg{
+        position: relative;
+        height: 2.813rem;
+        width: 3.5rem;
+        top: -2.25rem;
+        left: 3rem;
+        display: inline-flex;
+    }
+
+    .logo h1{
+        position: relative;
+        top: -2rem;
+        left: 12rem;
+        text-decoration: none;
+        color: #2c245f;
+        font-size: 1.75rem;
+        float: left;
+        display: inline-flex;
+    }
+
+    .name{
+        display: block;
+    }
+
+    .userName{
+        position: absolute;
+        display: block;
+        font-weight: bold;
+        max-width: 400px;
+        font-size: 1.875rem;
+        top: 50px;
+        left: 84%;
+        display: inline-flex;
+        text-align: right;
+    }
+
+    .unknownLabel{
+        position: absolute;
+        display: block;
+        color: gray;
+        font-size: 1.188em;
+        top: 90px;
+        left: 87%;
+    }
+
+    .userIcon{
+        height: 7.5%;
+        width: 4%;
+        position: absolute;
+        display: block;
+        top: 4%;
+        left: 93%;
+    }
+
+    .sideMenu a{
+        padding: 0.5rem 0.5rem 0.5rem 1.75rem;
+        text-decoration: none;
+        color: white;
+        display: block;
+        transition: 0.3s;
+        font-size: 16px;
+        margin-bottom: 20px;
+        font-weight: bold;
+    
+    }
+
+    .sideMenu a i{
+        padding-right: 10px;
+    }
+
+    .main-menu a:hover{
+        color: white;
+        background: lightgray;
+
+    }
+
+    .sideMenu .closebtn{
+        position: absolute;
+        top: 0;
+        right: 15px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    #menu-area{
+        transition: margin-left .5s;
+        padding: 16px;
+        display: inline-block;
+        padding: 30px 50px;
+        width: 100%;
+        height: 3.50rem;
+    }
+.BillingDetailsLbl{
+    top: 15%;
+    left: 10%;
+    font-size: 32;
+    position: absolute;
+    font-family: poppins;
+    font-weight: bold;
+}
+
+.xIcon{
+    height: 3.5%;
+    width: 2%;
+    top: 16%;
+    left: 23%;
+    position: absolute;
+}
+
+/* Billing Details Panel */
+.BillingDetailsPanel{
+    position: absolute;
+    height: 67.5%;
+    width: 35%;
+    border-radius: 10px;
+    background-color: #b9b9b9;
+    border: 5px solid;
+    border-color: #b9b9b9;
+    top: 22%; 
+    left: 10%;
+}
+
+.CompanyLabel{
+    position: absolute;
+    top: 3%;
+    left: 5%;
+    font-size: 14px;
+    font-family: poppins;
+    color: grey;
+}
+
+.ServiceLabel{
+    position: absolute;
+    top: 19%;
+    left: 5%;
+    font-size: 14px;
+    font-family: poppins;
+    color: grey;
+}
+
+.BillingPeriodLabel{
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    font-size: 14px;
+    font-family: poppins;
+    color: grey;
+}
+
+.DueLabel{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    font-size: 14px;
+    font-family: poppins;
+    color: grey;
+}
+
+
+.ConsumptionLabel{
+    position: absolute;
+    top: 65%;
+    left: 5%;
+    font-size: 14px;
+    font-family: poppins;
+    color: grey;
+}
+
+/* TextBoxes */
+.CompanyName{
+    position: absolute;
+    top: 6%;
+    left: 5%;
+    width: 90%;
+    font-size: 25px;
+    font-family: poppins;
+    font-weight: bold;
+    color: black;
+}
+
+.ServiceName{
+    position: absolute;
+    top: 22%;
+    left: 5%;
+    width: 90%;
+    font-size: 25px;
+    font-family: poppins;
+    font-weight: bold;
+    color: black;
+}
+
+.BillingPeriod{
+    position: absolute;
+    top: 38%;
+    left: 5%;
+    width: 90%;
+    font-size: 25px;
+    font-family: poppins;
+    font-weight: bold;
+    color: black;
+}
+
+.BillingDue{
+    position: absolute;
+    top: 53%;
+    left: 5%;
+    width: 90%;
+    font-size: 25px;
+    font-family: poppins;
+    font-weight: bold;
+    color: black;
+}
+
+.ElectricMeterNum{
+    position: absolute;
+    top: 68%;
+    left: 5%;
+    width: 90%;
+    font-size: 25px;
+    font-family: poppins;
+    font-weight: bold;
+    color: black;
+}
+
+.Consumption{
+    position: absolute;
+    top: 68%;
+    left: 5%;
+    width: 90%;
+    font-size: 25px;
+    font-family: poppins;
+    font-weight: bold;
+    color: black;
+}
+
+
+
+/* Payment Method Panel */
+.PaymentMethodPanel{
+    position: absolute;
+    height: 32%;
+    width: 40%;
+    border-radius: 10px;
+    background-color: #3f3f3f;
+    border: 5px solid;
+    border-color: #3f3f3f;
+    top: 22%; 
+    left: 50%;
+}
+
+.PaymentMethodLabel{
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    font-size: 18px;
+    font-family: poppins;
+    color: white;
+}
+
+.CreditCardPanel {
+    position: absolute;
+    height: 75px;
+    width: 160px;
+    top: 25%;
+    left: 8%;
+    background-color: #b9b9b9;
+    border-radius: 10px;
+    border: 5px solid;
+    border-color: #b9b9b9;
+    align-items: center;   
+}
+
+.PayPalPanel{
+    position: absolute;
+    height: 75px;
+    width: 160px;
+    top: 25%;
+    left: 37%;
+    background-color: #b9b9b9;
+    border-radius: 10px;
+    border: 5px solid;
+    border-color: #b9b9b9;
+    align-items: center;
+} 
+
+.GcashPanel{
+    position: absolute;
+    height: 75px;
+    width: 160px;
+    top: 25%;
+    left: 66%;
+    background-color: #b9b9b9;
+    border-radius: 10px;
+    border: 5px solid;
+    border-color: #b9b9b9;
+    align-items: center;
+}
+
+.AmericanExpressPanel{
+    position: absolute;
+    height: 75px;
+    width: 160px;
+    top: 61%;
+    left: 8%;
+    background-color: #b9b9b9;
+    border-radius: 10px;
+    border: 5px solid;
+    border-color: #b9b9b9;
+    align-items: center;
+}
+
+.PayMayaPanel{
+    position: absolute;
+    height: 75px;
+    width: 160px;
+    top: 61%;
+    left: 37%;
+    background-color: #b9b9b9;
+    border-radius: 10px;
+    border: 5px solid;
+    border-color: #b9b9b9;
+    align-items: center;
+}
+
+.BitcoinPanel{
+    position: absolute;
+    height: 75px;
+    width: 160px;
+    top: 61%;
+    left: 66%;
+    background-color: #b9b9b9;
+    border-radius: 10px;
+    border: 5px solid;
+    border-color: #b9b9b9;
+    align-items: center;
+}
+
+/* Payment Icons */
+.CreditCardIcon{
+    height: 70%;
+    width: 50%;
+    top: 14%;
+    left: 25%;
+    position: absolute;
+}
+
+.PayPalIcon{
+    height: 65%;
+    width: 55%;
+    top: 19%;
+    left: 28%; 
+    position: absolute; 
+}
+
+.GcashIcon{
+    height: 45%;
+    width: 65%;
+    top: 27%;
+    left: 15.5%;
+    position: absolute;
+}
+
+.AMEXIcon{
+    height: 75%;
+    width: 45%;
+    top: 14%;
+    left: 30%;
+    position: absolute;
+}
+
+.PayMayaIcon{
+    height: 45%;
+    width: 65%;
+    top: 34.5%;
+    left: 16%;
+    position: absolute;
+}
+
+.BitcoinIcon{
+    height: 75%;
+    width: 45%;
+    top: 14.5%;
+    left: 27.5%;
+    position: absolute;
+}
+
+/* Reference no Panel */
+.ReferenceNoPanel{
+    position: absolute;
+    height: 29.5%;
+    width: 40%;
+    border-radius: 10px;
+    background-color: #a0ccff;
+    border: 5px solid;
+    border-color: #a0ccff;
+    top: 60%; 
+    left: 50%;
+}
+
+.ReferenceNoLabel{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 18px;
+    font-family: poppins;
+    color: black;
+    font-weight: bold;
+}
+
+.ReferenceNo{
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    font-size: 26px;
+    font-family: poppins;
+    color: black;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+}
+
+.PayBtn{
+    position: absolute;
+    height: 24%;
+    width: 30%;
+    top: 5%;
+    left: 63%;
+    border-radius: 10px;
+    background-color: gray;
+    border-color: gray;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    font-family: poppins;
+}
+
+.AmountPanel{
+    position: absolute;
+    height: 50%;
+    width: 88%;
+    top: 37%;
+    left: 5%;
+    border-radius: 10px;
+    background-color: #a0ccff;
+    border-color: #578abe;
+    border: 2px solid;
+}
+
+.TotalAmtLabel{
+    position: absolute;
+    top: 8%;
+    left: 5%;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: poppins;
+    color: black;
+}
+
+.Amount{
+    position: absolute;
+    top: 20%;
+    left: 8%;
+    font-size: 58px;
+    font-weight: bold;
+    font-family: poppins;
+    color: black;
+}
+
+/* pop up */
+.popup{
+    height: 35%; 
+    width: 35%;
+    background: #5294e2;
+    border-radius: 10px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1); 
+    text-align: center;
+    padding: 0 30px 30px; 
+    visibility: hidden; 
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img{
+    position: absolute;
+    height: 85%;
+    width: 53%;
+    top: 15%;
+    left: 2%;
+}
+
+.popup h1{
+    font-size: 26px;
+    width: 50%;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+}
+
+.ConfirmBtn{
+    position: absolute;
+    height: 16%;
+    width: 35%;
+    top: 35%;
+    left: 57%;
+    border-radius: 10px;
+    background-color: rgb(56, 209, 56);
+    border-color: #5294e2;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    font-family: poppins;
+    padding-top: 12px;
+    box-shadow: 5px 7px #888888;
+}
+
+.CancelBtn{
+    position: absolute;
+    padding-top: 12px;
+    height: 16%;
+    width: 35%;
+    top: 60%;
+    left: 57%;
+    border-radius: 10px;
+    background-color: red;
+    border-color: #5294e2;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    font-family: poppins;        
+    box-shadow: 5px 7px #888888;
+}
+
+.popup2{
+    height: 25%; 
+    width: 30%;
+    background: #5294e2;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1); 
+    text-align: center;
+    padding: 0 30px 30px; 
+    visibility: hidden; 
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup2{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup2 h1{
+    font-size: 26px;
+    width: 70%;
+    font-weight: bold;
+    font-family: poppins;
+    color: white;
+    position: absolute;
+    top: 20%;
+    left: 15%; 
+}
+
+.BackBtn{
+    position: absolute;
+    height: 15%;
+    width: 40%;
+    top: 50%;
+    left: 30%;
+    border-radius: 5px;
+    background-color: #5294e2;
+    border-color: white;
+    outline: 1px solid white;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-family: poppins;
+}

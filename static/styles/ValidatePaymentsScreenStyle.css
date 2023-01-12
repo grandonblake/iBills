@@ -1,0 +1,270 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.alerts{
+    position: absolute;
+    top: 15%;
+    left: 70%;
+    padding-bottom: 92%;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100%;
+}
+
+.sideMenu{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: lightgray;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 6.25rem;
+}
+
+.menuBar{
+    display: inline-flex;
+    padding-left: 3rem;
+}
+
+.logo img{
+    position: relative;
+    height: 2.813rem;
+    width: 3.5rem;
+    top: -2.25rem;
+    left: 3rem;
+    display: inline-flex;
+}
+
+.logo h1{
+    position: relative;
+    top: -2rem;
+    left: 12rem;
+    text-decoration: none;
+    color: #2c245f;
+    font-size: 1.75rem;
+    float: left;
+    display: inline-flex;
+}
+
+.name{
+    display: block;
+}
+
+.userName{
+    position: absolute;
+    display: block;
+    font-weight: bold;
+    font-size: 1.875rem;
+    top: 4%;
+    left: 69%;
+    width: 20%;
+    text-align: right;
+}
+
+.unknownLabel{
+    position: absolute;
+    display: block;
+    color: gray;
+    font-size: 1.188em;
+    top: 9%;
+    left: 87.5%;
+}
+
+.userIcon{
+    height: 7.5%;
+    width: 4%;
+    position: absolute;
+    display: block;
+    top: 4%;
+    left: 90%;
+}
+
+.main-menu h2{
+    text-align: center;
+    letter-spacing: 7px;
+    color: #fff;
+    background-color: #111;
+    padding: 20px 0;
+}
+
+.sideMenu a{
+    padding: 0.5rem 0.5rem 0.5rem 1.75rem;
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    
+}
+
+.sideMenu a i{
+    padding-right: 10px;
+}
+
+.main-menu a:hover{
+    color: white;
+    background: lightgray;
+
+}
+
+.sideMenu .closebtn{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#menu-area{
+    transition: margin-left .5s;
+    padding: 16px;
+    display: inline-block;
+    padding: 30px 50px;
+    width: 100%;
+    height: 3.50rem;
+}
+
+.content {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 0;
+    top: 130px;
+    overflow-x: hidden;
+    padding-top: 20px;
+    overflow-y: visible;
+  }
+
+  .content h1{
+    margin-left: 180px;
+    font-size: 36px;
+  }
+  .content h2{
+    margin-left: 180px;
+    padding: 20px 0px;
+    font-size: 28px;
+  }
+  .content p{
+    margin-left: 180px;
+    font-size: 18px;
+    color: #555;
+  }
+
+  .validateHeader{
+    position: relative;
+    display: inline-flex;
+    background: #dadada;
+    top: 3%;
+    left: 12%;
+    font-size: 16px;
+    font-weight: bold;
+    }
+    .headerValidateText1{
+        position: relative;
+        margin: 10px 10px;
+    }
+    .headerValidateText2{
+        position: relative;
+        margin: 10px 60px;
+    }
+    .headerValidateText3{
+        position: relative;
+        margin: 10px 65px;
+    }
+    .headerValidateText4{
+        position: relative;
+        margin: 10px 55px;
+    }
+    .headerValidateText5{
+        position: relative;
+        margin: 10px 45px;
+    }
+
+    .validateContent{
+        position: relative;
+        display: inline-flex;
+        top: 70px;
+        left: 12%;
+        min-width: 965px;
+        min-height: 60px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 10px;
+        border: darkgray solid 3px;
+        color: black;
+    }
+    .contentText1{
+        position: relative;
+        margin: 10px 0px;
+        width: 120px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .contentText2{
+        position: relative;
+        margin: 10px 0px;
+        width: 280px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .contentText3{
+        position: relative;
+        margin: 10px 0px;
+        width: 200px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .contentText4{
+        position: relative;
+        margin: 10px 0px;
+        width: 230px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .contentText5{
+        position: relative;
+        margin: 10px 0px;
+        width: 120px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .contentButton{
+        position: absolute;
+        background-color: green;
+        color: white;
+        width: 100px;
+        margin: 10px 20px;
+        padding: 10px 10px;
+        left: 100%;
+        border-radius: 15px;
+        border:none;
+        box-shadow: 3px 3px 5px gray;
+    }

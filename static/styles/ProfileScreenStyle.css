@@ -1,0 +1,364 @@
+.alerts{
+    position: absolute;
+    top: 25%;
+    left: 65%;
+    right: 12.5%;
+}
+
+.sideMenu{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: lightgray;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 6.25rem;
+}
+
+.menuBar{
+    display: inline-flex;
+    padding-left: 3rem;
+}
+
+.logo img{
+    position: relative;
+    height: 2.813rem;
+    width: 3.5rem;
+    top: -2.25rem;
+    left: 3rem;
+    display: inline-flex;
+}
+
+.logo h1{
+    position: relative;
+    top: -2rem;
+    left: 12rem;
+    text-decoration: none;
+    color: #2c245f;
+    font-size: 1.75rem;
+    float: left;
+    display: inline-flex;
+}
+
+.name{
+    display: block;
+}
+
+.userName{
+    position: absolute;
+    display: block;
+    font-weight: bold;
+    font-size: 1.875rem;
+    top: 4%;
+    left: 69%;
+    width: 20%;
+    text-align: right;
+}
+
+.unknownLabel{
+    position: absolute;
+    display: block;
+    color: gray;
+    font-size: 1.188em;
+    top: 9%;
+    left: 87.5%;
+}
+
+.userIcon{
+    height: 7.5%;
+    width: 4%;
+    position: absolute;
+    display: block;
+    top: 4%;
+    left: 90%;
+}
+
+.main-menu h2{
+    text-align: center;
+    letter-spacing: 7px;
+    color: #fff;
+    background-color: #111;
+    padding: 20px 0;
+}
+
+.sideMenu a{
+    padding: 0.5rem 0.5rem 0.5rem 1.75rem;
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    
+}
+
+.sideMenu a i{
+    padding-right: 10px;
+}
+
+.main-menu a:hover{
+    color: white;
+    background: lightgray;
+
+}
+
+.sideMenu .closebtn{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#menu-area{
+    transition: margin-left .5s;
+    padding: 16px;
+    display: inline-block;
+    padding: 30px 50px;
+    width: 100%;
+    height: 3.50rem;
+}
+
+.myProfileLabel{
+    position: absolute;
+    top: 12%;
+    left: 10.5%;
+    font-family: poppins;
+    font-weight: bold;
+    font-size: 48px;
+}
+
+.lineDesign{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    color: gray;
+    font-weight: bold;
+    
+   
+
+}
+
+.userInformationLabel{
+    position: absolute;
+    top: 23%;
+    left: 10.5%;
+    font-family: poppins;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.noticeLabel{
+    position: absolute;
+    top: 30%;
+    left: 10.5%;
+    color: gray;
+    font-size: 20px;
+
+}
+
+.pencilIcon{
+    position: absolute;
+    top: 24%;
+    left: 24%;
+    height: 3%;
+    width: 2%;
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 5px;
+    border-color: gray;
+}
+
+
+.firstNameLabel{
+    position: absolute;
+    top: 40%;
+    left: 10.5%;
+    font-size: 24px;
+    font-weight: bold;
+}
+.firstNameInput{
+    position: absolute;
+    border-radius: 10px;
+    border-color: gray;
+    outline: 0;
+    height: 5%;
+    width: 22%;
+    top: 47%;
+    left: 10.5%;
+    padding-left: 10px;
+    font-family: poppins;
+    font-size: 22px;
+   
+}
+
+
+.lastnameLabel{
+    position: absolute;
+    top: 40%;
+    left: 38%;
+    font-size: 24px;
+    font-weight: bold;
+}
+.lastnameInput{
+    position: absolute;
+    border-radius: 10px;
+    border-color: gray;
+    outline: 0;
+    height: 5%;
+    width: 22%;
+    top: 47%;
+    left: 38%;
+    padding-left: 10px;
+    font-family: poppins;
+    font-size: 22px;
+}
+
+.contactNumberLabel{
+    position: absolute;
+    top: 40%;
+    left: 65.5%;
+    font-size: 24px;
+    font-weight: bold;
+}
+.contactNumberInput{
+    position: absolute;
+    border-radius: 10px;
+    border-color: gray;
+    outline: 0;
+    height: 5%;
+    width: 22%;
+    top: 47%;
+    left: 65.5%;
+    padding-left: 10px;
+    font-family: poppins;
+    font-size: 22px;
+}
+
+.addressLabel{
+    position: absolute;
+    top: 54%;
+    left: 10.5%;
+    font-size: 24px;
+    font-weight: bold;
+}
+.addressInput{
+    position: absolute;
+    border-radius: 10px;
+    border-color: gray;
+    outline: 0;
+    height: 5%;
+    width: 50%;
+    top: 61%;
+    left: 10.5%;
+    padding-left: 10px;
+    font-family: poppins;
+    font-size: 22px;
+    
+}
+
+.emailLabel{
+    position: absolute;
+    top: 54%;
+    left: 65.5%;
+    font-size: 24px;
+    font-weight: bold;
+}
+.emailInput{
+    position: absolute;
+    border-radius: 10px;
+    border-color: gray;
+    outline: 0;
+    height: 5%;
+    width: 22%;
+    top: 61%;
+    left: 65.5%;
+    padding-left: 10px;
+    font-family: poppins;
+    font-size: 22px;
+    
+}
+
+.birthdayLabel{
+    position: absolute;
+    top: 68%;
+    left: 10.5%;
+    font-size: 24px;
+    font-weight: bold;
+    
+}
+.birthdayInput{
+    position: absolute;
+    border-radius: 10px;
+    border-color: gray;
+    outline: 0;
+    height: 5%;
+    width: 22%;
+    top: 75%;
+    left: 10.5%;
+    padding-left: 10px;
+    font-family: poppins;
+    font-size: 22px;
+    padding-right: 10px;
+}
+    
+.passwordLabel{
+    position: absolute;
+    top: 68%;
+    left: 38%;
+    font-size: 24px;
+    font-weight: bold;
+}
+.passwordInput{
+    position: absolute;
+    border-radius: 10px;
+    border-color: gray;
+    outline: 0;
+    height: 5%;
+    width: 22%;
+    top: 75%;
+    left: 38%;
+    padding-left: 10px;
+    font-family: poppins;
+    font-size: 22px;
+}
+
+.confirmpassLabel{
+    position: absolute;
+    top: 68%;
+    left: 65.5%;
+    font-size: 24px;
+    font-weight: bold;
+   
+}
+.confirmpassInput{
+    position: absolute;
+    border-radius: 10px;
+    border-color: gray;
+    outline: 0;
+    height: 5%;
+    width: 22%;
+    top: 75%;
+    left: 65.5%;
+    padding-left: 10px;
+    font-family: poppins;
+    font-size: 22px;
+}
+
+.saveButton{
+    position: absolute;
+    border-radius: 10px;
+    border: 0;
+    background-color: #0c77bd;
+    height: 5%;
+    width: 22%;
+    top: 90%;
+    left: 65.5%;
+    color: white;
+    font-size: 25px;
+    font-family: poppins;
+}

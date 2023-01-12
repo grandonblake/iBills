@@ -1,0 +1,935 @@
+@keyframes fadeIn{
+    0% {opacity: 0;}
+    100% {opacity: 1}
+}
+  @keyframes pop{
+    50%  {transform: scale(5);}
+  }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow: auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.alerts{
+    position: absolute;
+    top: 5%;
+    left: 70%;
+    padding-bottom: 92%;
+}
+
+.header{
+    height: 100vh;
+    width: 100%;
+    padding: 0 3%;
+    position: relative; 
+}
+.content{
+    display: table;
+    width: 100%;
+}
+div{
+    height: 100%;
+}
+.welcome{
+    position: absolute;
+    left: 0px;
+    width: 50%;
+}
+.welcome h1{
+    position: absolute;
+    left: 430px;
+    top: 13%;
+    width: 90%;
+    max-width: 900px;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    font-weight: bold;
+    color: #696969;
+    text-align: center;
+    animation: fadeIn 2s;
+}
+
+.welcome img{
+    position: absolute;
+    width: 100%;
+    height: 7%;
+    left: 340px;
+    top: 190px;
+    max-width: 80px;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 5s;
+}
+
+.welcome h2{
+    position: absolute;
+    left: 480px;
+    top: 20%;
+    width: 90%;
+    max-width: 150px;
+    transform: translate(-50%, -50%);
+    font-size: 64px;
+    font-weight: bold;
+    color: #2c245f;
+    animation: fadeIn 5s;
+}
+
+.welcome p{
+    position: absolute;
+    left: 360px;
+    top: 30%;
+    width: 90%;
+    max-width: 800px;
+    transform: translate(-50%, -50%);
+    font-size: 21px;
+    color: #696969;
+    text-align: right;
+    animation: fadeIn 7s;
+}
+
+.inputContainer1{
+    display: flex;
+    position: relative;
+    left: 460px;
+    top: 360px;
+    height: 60px;
+    width: 100%;
+    margin-bottom: 30px;
+    max-width: 600px;
+    transform: translate(-50%, -50%);
+    border: 3px solid;
+    border-color: #696969;
+    border-radius: 50px;
+    animation: fadeIn 7s;
+    font-size: 36px; 
+    color: #696969;
+}
+
+.inputContainer2{
+    display: flex;
+    position: relative;
+    left: 460px;
+    top: 360px;
+    height: 60px;
+    width: 100%;
+    margin-bottom: 30px;
+    max-width: 600px;
+    transform: translate(-50%, -50%);
+    border: 3px solid;
+    border-color: #696969;
+    border-radius: 50px;
+    animation: fadeIn 7s;
+    font-size: 40px; 
+    color: #696969;
+}
+
+.inputField{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    font-size: 22px;
+    color: #696969;
+    animation: fadeIn 7s;
+}
+
+i{
+    position: relative;
+    padding: 10 30px;
+    text-align: center;
+}
+
+.button {
+    position: relative;
+    background-color: #0c77bd;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 60px;
+    max-width: 600px;
+    left: 460px;
+    top: 360px;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    font-size: 22px;
+    animation: fadeIn 7s;
+}
+
+.signUp p{
+    position: absolute;
+    left: 100px;
+    top: 65%;
+    width: 90%;
+    max-width: 800px;
+    transform: translate(-50%, -50%);
+    font-size: 21px;
+    color: #696969;
+    text-align: right;
+    animation: fadeIn 7s;
+}
+
+.signUp a{
+    position: absolute;
+    left: 235px;
+    top: 65%;
+    width: 90%;
+    max-width: 800px;
+    transform: translate(-50%, -50%);
+    font-size: 21px;
+    color: #696969;
+    text-align: right;
+    animation: fadeIn 7s;
+    color: #0c77bd;
+}
+
+hr{
+    position: absolute;
+    left: 330px;
+    top: 73%;
+    width: 90%;
+    max-width: 200px;
+    transform: translate(-50%, -50%);
+    font-size: 21px;
+    color: #696969;
+    animation: fadeIn 7s;
+}
+
+.or hr{
+    position: absolute;
+    left: 590px;
+    top: 73%;
+    width: 90%;
+    max-width: 200px;
+    transform: translate(-50%, -50%);
+    font-size: 21px;
+    color: #696969;
+    animation: fadeIn 7s;
+}
+
+.or h1{
+    position: absolute;
+    left: 450px;
+    top: 73%;
+    width: 90%;
+    max-width: 50px;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #696969;
+    text-align: right;
+    animation: fadeIn 7s;
+}
+
+.socialMedia p{
+    position: absolute;
+    left: 350px;
+    top: 80%;
+    width: 90%;
+    max-width: 500px;
+    transform: translate(-50%, -50%);
+    font-size: 21px;
+    color: #696969;
+    text-align: right;
+    animation: fadeIn 7s;
+}
+
+.icon1 img{
+    position: absolute;
+    width: 100%;
+    height: 49px;
+    left: 350px;
+    top: 90%;
+    max-width: 51px;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 5s;
+}
+
+.icon2 img{
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    left: 460px;
+    top: 90%;
+    max-width: 51px;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 5s;
+}
+
+.icon3 img{
+    position: absolute;
+    width: 100%;
+    height: 54px;
+    left: 570px;
+    top: 90.2%;
+    max-width: 51px;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 5s;
+}
+
+.background{
+    position: absolute;
+    right: 0px;
+    width: 50%;
+    max-width: 950px;
+    background: #0c77bd;;
+}
+.backgroundImg img{
+    position: absolute;
+    width: 100%;
+    height: 100.7%;
+    right: -470px;
+    top: 470px;
+    max-width: 1000px;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+} 
+
+.logoWhite img{
+    position: absolute;
+    width: 100%;
+    height: 9%;
+    right: 360px;
+    top: 32%;
+    max-width: 110px;
+    transform: translate(-50%, -50%);
+    animation: pop 0.5s linear 1;
+}
+
+.text h1{
+    position: absolute;
+    right: 165px;
+    top: 42%;
+    width: 90%;
+    max-width: 500px;
+    transform: translate(-50%, -50%);
+    font-size: 56px;
+    color: white;
+    text-align: right;
+}
+
+.text h2{
+    position: absolute;
+    left: 340px;
+    top: 49%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: white;
+    text-align: right;
+}
+
+.text p{
+    position: absolute;
+    left: 490px;
+    top: 65%;
+    width: 100%;
+    max-width: 640px;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+    text-align: center;
+}
+
+/*1440X900 Devices*/
+@media screen and (max-width:1500px) {
+    .welcome h1{
+        position: absolute;
+        left: 330px;
+        top: 13%;
+        width: 90%;
+        max-width: 900px;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        font-weight: bold;
+        color: #696969;
+        text-align: center;
+        animation: fadeIn 2s;
+    }
+    
+    .welcome img{
+        position: absolute;
+        width: 100%;
+        height: 6%;
+        left: 260px;
+        top: 150px;
+        max-width: 60px;
+        transform: translate(-50%, -50%);
+        animation: fadeIn 5s;
+    }
+    
+    .welcome h2{
+        position: absolute;
+        left: 380px;
+        top: 20%;
+        width: 90%;
+        max-width: 150px;
+        transform: translate(-50%, -50%);
+        font-size: 56px;
+        font-weight: bold;
+        color: #2c245f;
+        animation: fadeIn 5s;
+    }
+    
+    .welcome p{
+        position: absolute;
+        left: 240px;
+        top: 30%;
+        width: 90%;
+        max-width: 800px;
+        transform: translate(-50%, -50%);
+        font-size: 16px;
+        color: #696969;
+        text-align: right;
+        animation: fadeIn 7s;
+    }
+    
+    .inputContainer1{
+        display: flex;
+        position: relative;
+        left: 330px;
+        top: 290px;
+        height: 50px;
+        width: 100%;
+        margin-bottom: 30px;
+        max-width: 450px;
+        transform: translate(-50%, -50%);
+        border: 3px solid;
+        border-color: #696969;
+        border-radius: 50px;
+        animation: fadeIn 7s;
+        font-size: 27px; 
+        color: #696969;
+    }
+
+    .inputContainer2{
+        display: flex;
+        position: relative;
+        left: 330px;
+        top: 290px;
+        height: 50px;
+        width: 100%;
+        margin-bottom: 30px;
+        max-width: 450px;
+        transform: translate(-50%, -50%);
+        border: 3px solid;
+        border-color: #696969;
+        border-radius: 50px;
+        animation: fadeIn 7s;
+        font-size: 30px; 
+        color: #696969;
+    }
+    
+    .inputField{
+        width: 100%;
+        outline: none;
+        border: none;
+        border-radius: 50px;
+        font-size: 22px;
+        color: #696969;
+        animation: fadeIn 7s;
+    }
+    
+    i{
+        position: relative;
+        padding: 10 25px;
+        text-align: center;
+    }
+    
+    .button {
+        position: relative;
+        background-color: #0c77bd;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        height: 60px;
+        max-width: 450px;
+        left: 330px;
+        top: 290px;
+        transform: translate(-50%, -50%);
+        border-radius: 50px;
+        font-size: 20px;
+        animation: fadeIn 7s;
+    }
+    
+    .signUp p{
+        position: absolute;
+        left: 40px;
+        top: 68%;
+        width: 90%;
+        max-width: 800px;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        color: #696969;
+        text-align: right;
+        animation: fadeIn 7s;
+    }
+    
+    .signUp a{
+        position: absolute;
+        left: 155px;
+        top: 68%;
+        width: 90%;
+        max-width: 800px;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        color: #696969;
+        text-align: right;
+        animation: fadeIn 7s;
+        color: #0c77bd;
+    }
+    
+    hr{
+        position: absolute;
+        left: 230px;
+        top: 73%;
+        width: 90%;
+        max-width: 150px;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        color: #696969;
+        animation: fadeIn 7s;
+    }
+    
+    .or hr{
+        position: absolute;
+        left: 440px;
+        top: 73%;
+        width: 90%;
+        max-width: 150px;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        color: #696969;
+        animation: fadeIn 7s;
+    }
+    
+    .or h1{
+        position: absolute;
+        left: 325px;
+        top: 73%;
+        width: 90%;
+        max-width: 50px;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        color: #696969;
+        text-align: right;
+        animation: fadeIn 7s;
+    }
+    
+    .socialMedia p{
+        position: absolute;
+        left: 210px;
+        top: 78%;
+        width: 90%;
+        max-width: 500px;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        color: #696969;
+        text-align: right;
+        animation: fadeIn 7s;
+    }
+    
+    .icon1 img{
+        position: absolute;
+        width: 100%;
+        height: 49px;
+        left: 240px;
+        top: 90%;
+        max-width: 51px;
+        transform: translate(-50%, -50%);
+        animation: fadeIn 5s;
+    }
+    
+    .icon2 img{
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        left: 340px;
+        top: 90%;
+        max-width: 51px;
+        transform: translate(-50%, -50%);
+        animation: fadeIn 5s;
+    }
+    
+    .icon3 img{
+        position: absolute;
+        width: 100%;
+        height: 54px;
+        left: 440px;
+        top: 90.2%;
+        max-width: 51px;
+        transform: translate(-50%, -50%);
+        animation: fadeIn 5s;
+    }
+    
+    .background{
+        position: absolute;
+        right: 0px;
+        width: 50%;
+        max-width: 950px;
+        background: #0c77bd;;
+    }
+    .backgroundImg img{
+        position: absolute;
+        width: 100%;
+        height: 100.7%;
+        right: -360px;
+        top: 380px;
+        max-width: 1000px;
+        transform: translate(-50%, -50%);
+        opacity: 0.2;
+    } 
+    
+    .logoWhite img{
+        position: absolute;
+        width: 100%;
+        height: 7%;
+        right: 260px;
+        top: 32%;
+        max-width: 90px;
+        transform: translate(-50%, -50%);
+        animation: pop 0.5s linear 1;
+    }
+    
+    .text h1{
+        position: absolute;
+        right: 55px;
+        top: 41%;
+        width: 90%;
+        max-width: 500px;
+        transform: translate(-50%, -50%);
+        font-size: 44px;
+        color: white;
+        text-align: right;
+    }
+    
+    .text h2{
+        position: absolute;
+        left: 230px;
+        top: 48%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        color: white;
+        text-align: right;
+    }
+    
+    .text p{
+        position: absolute;
+        left: 370px;
+        top: 59%;
+        width: 100%;
+        max-width: 420px;
+        transform: translate(-50%, -50%);
+        font-size: 14px;
+        color: white;
+        text-align: center;
+    }
+}
+  
+/*1024x768 Devices*/
+@media screen and (max-width:1024px) {
+    .welcome h1{
+        position: absolute;
+        left: 50%;
+        top: 12%;
+        width: 50%;
+        max-width: 900px;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        font-weight: bold;
+        color: #696969;
+        text-align: center;
+        animation: fadeIn 2s;
+    }
+    
+    .welcome img{
+        position: absolute;
+        width: 100%;
+        height: 6%;
+        left: 190px;
+        top: 19%;
+        max-width: 60px;
+        transform: translate(-50%, -50%);
+        animation: fadeIn 5s;
+    }
+    
+    .welcome h2{
+        position: absolute;
+        left: 300px;
+        top: 19%;
+        width: 90%;
+        max-width: 150px;
+        transform: translate(-50%, -50%);
+        font-size: 48px;
+        font-weight: bold;
+        color: #2c245f;
+        animation: fadeIn 5s;
+    }
+    
+    .welcome p{
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        width: 90%;
+        max-width: 400px;
+        transform: translate(-50%, -50%);
+        font-size: 14px;
+        color: #696969;
+        text-align: right;
+        animation: fadeIn 7s;
+    }
+    
+    .inputContainer1{
+        display: flex;
+        position: relative;
+        left: 50%;
+        top: 250px;
+        height: 50px;
+        width: 100%;
+        margin-bottom: 20px;
+        max-width: 400px;
+        transform: translate(-50%, -50%);
+        border: 3px solid;
+        border-color: #696969;
+        border-radius: 50px;
+        animation: fadeIn 7s;
+        font-size: 22px; 
+        color: #696969;
+    }
+
+    .inputContainer2{
+        display: flex;
+        position: relative;
+        left: 50%;
+        top: 250px;
+        height: 50px;
+        width: 100%;
+        margin-bottom: 30px;
+        max-width: 400px;
+        transform: translate(-50%, -50%);
+        border: 3px solid;
+        border-color: #696969;
+        border-radius: 50px;
+        animation: fadeIn 7s;
+        font-size: 24px; 
+        color: #696969;
+    }
+    
+    .inputField{
+        width: 100%;
+        outline: none;
+        border: none;
+        border-radius: 50px;
+        font-size: 16px;
+        color: #696969;
+        animation: fadeIn 7s;
+    }
+    
+    i{
+        position: relative;
+        padding: 10 20px;
+        text-align: center;
+    }
+    
+    .button {
+        position: relative;
+        background-color: #0c77bd;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        height: 60px;
+        max-width: 400px;
+        left: 50%;
+        top: 250px;
+        transform: translate(-50%, -50%);
+        border-radius: 50px;
+        font-size: 20px;
+        animation: fadeIn 7s;
+    }
+    
+    .signUp p{
+        position: absolute;
+        left: 60px;
+        top: 74%;
+        width: 90%;
+        max-width: 800px;
+        transform: translate(-50%, -50%);
+        font-size: 14px;
+        color: #696969;
+        text-align: right;
+        animation: fadeIn 7s;
+    }
+    
+    .signUp a{
+        position: absolute;
+        left: 150px;
+        top: 74%;
+        width: 90%;
+        max-width: 800px;
+        transform: translate(-50%, -50%);
+        font-size: 14px;
+        color: #696969;
+        text-align: right;
+        animation: fadeIn 7s;
+        color: #0c77bd;
+    }
+    
+    hr{
+        position: absolute;
+        left: 174px;
+        top: 78%;
+        width: 90%;
+        max-width: 140px;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        color: #696969;
+        animation: fadeIn 7s;
+    }
+    
+    .or hr{
+        position: absolute;
+        left: 345px;
+        top: 78%;
+        width: 90%;
+        max-width: 120px;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        color: #696969;
+        animation: fadeIn 7s;
+    }
+    
+    .or h1{
+        position: absolute;
+        left: 250px;
+        top: 78%;
+        width: 90%;
+        max-width: 50px;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        color: #696969;
+        text-align: right;
+        animation: fadeIn 7s;
+    }
+    
+    .socialMedia p{
+        position: absolute;
+        left: 50%;
+        top: 82%;
+        width: 90%;
+        max-width: 200px;
+        transform: translate(-50%, -50%);
+        font-size: 14px;
+        color: #696969;
+        text-align: right;
+        animation: fadeIn 7s;
+    }
+    
+    .icon1 img{
+        position: absolute;
+        width: 100%;
+        height: 29px;
+        left: 180px;
+        top: 92%;
+        max-width: 31px;
+        transform: translate(-50%, -50%);
+        animation: fadeIn 5s;
+    }
+    
+    .icon2 img{
+        position: absolute;
+        width: 100%;
+        height: 30px;
+        left: 260px;
+        top: 92%;
+        max-width: 33px;
+        transform: translate(-50%, -50%);
+        animation: fadeIn 5s;
+    }
+    
+    .icon3 img{
+        position: absolute;
+        width: 100%;
+        height: 34px;
+        left: 340px;
+        top: 92.2%;
+        max-width: 37px;
+        transform: translate(-50%, -50%);
+        animation: fadeIn 5s;
+    }
+    
+    .background{
+        position: absolute;
+        right: 0px;
+        width: 50%;
+        max-width: 950px;
+        background: #0c77bd;;
+    }
+    .backgroundImg img{
+        position: absolute;
+        width: 100%;
+        height: 102.7%;
+        right: -255px;
+        top: 320px;
+        max-width: 1000px;
+        transform: translate(-50%, -50%);
+        opacity: 0.2;
+    } 
+    
+    .logoWhite img{
+        position: absolute;
+        width: 100%;
+        height: 6%;
+        right: 50%;
+        left: 50%;
+        top: 30%;
+        max-width: 60px;
+        transform: translate(-50%, -50%);
+        animation: pop 0.5s linear 1;
+    }
+    
+    .text h1{
+        position: absolute;
+        left: 50%;
+        top: 39%;
+        width: 90%;
+        max-width: 100px;
+        transform: translate(-50%, -50%);
+        font-size: 44px;
+        color: white;
+        text-align: right;
+    }
+    
+    .text h2{
+        position: absolute;
+        right: 50%;
+        left: 50%;
+        top: 46%;
+        width: 65%;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        color: white;
+        text-align: right;
+    }
+    
+    .text p{
+        position: absolute;
+        left: 50%;
+        top: 61%;
+        width: 100%;
+        max-width: 330px;
+        transform: translate(-50%, -50%);
+        font-size: 14px;
+        color: white;
+        text-align: center;
+    }
+}

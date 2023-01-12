@@ -1,0 +1,476 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header{
+    height: 100vh;
+    width: 100%;
+    padding: 0 3%;
+    position: relative;
+    
+}
+/* Navbar */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding-left: 20px;
+    }
+
+.nav-links{
+    padding:28px 0;
+}
+
+.nav-links li{
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.nav-links li a {
+color: #2c245f;
+padding: 5px 10px;
+text-decoration: none;
+font-size: 20px;
+position: relative;
+}
+
+.nav-links li a::after{
+    content: '';
+    background: black;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s;
+}
+
+.nav-links li a:hover::after{
+    width: 100%;
+}
+.nav-links li a.active {
+background-color: lightgray;
+color: #2c245f;
+border-radius: 20px;
+height: 25px;
+}
+
+.header img{
+    height: 45px;
+    width: 55px;
+    display: inline-block;
+}
+.header h1{
+    top: 18px;
+    left: 10px;
+    text-decoration: none;
+    color: #2c245f;
+    font-size: 24px;
+    display: inline-block;
+    margin-right: 1100;
+}
+/* Content */
+.content img{
+    position: relative;
+    width: 60%;
+    height: 85%;
+    padding-top: 20;
+}
+
+.content h1{
+    position: absolute;
+    left: 1380px;
+    top: 25%;
+    width: 90%;
+    max-width: 900px;
+    transform: translate(-50%, -50%);
+    text-align: right;
+    font-size: 84px;
+    color: #0c77bd;
+}
+
+.content h2{
+    position: absolute;
+    left: 1380px;
+    top: 35%;
+    width: 90%;
+    max-width: 900px;
+    transform: translate(-50%, -50%);
+    text-align: right;
+    font-size: 84px;
+    color: #2c245f;
+    font-weight: 10000;
+}
+
+.content p{
+    position: absolute;
+    left: 77%;
+    top: 48%;
+    width: 38%;
+    max-width: 900px;
+    transform: translate(-50%, -50%);
+    text-align: right;
+    font-size: 24px;
+    color: darkgray;
+}
+
+.signUp button.signUpButton{
+    position: absolute;
+    left: 88%;
+    top: 62%;
+    width: 38%;
+    max-width: 300px;
+    transform: translate(-50%, -50%);
+    align-items: right;
+    background-color: #0c77bd;
+    font-size: 32px;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-style: italic;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 40px;
+    border:none;
+}
+
+.signIn p{
+    position: absolute;
+    left: 86%;
+    top: 90%;
+    width: 40%;
+    max-width: 380px;
+    transform: translate(-50%, -50%);
+    text-align: right;
+    font-size: 18px;
+    color: darkgray;
+    border: 1px solid;
+    border-top-color: #0c77bd;
+    border-top-width: 2px;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+.signIn a{
+    position: absolute;
+    left: 86%;
+    top: 93%;
+    width: 40%;
+    max-width: 380px;
+    transform: translate(-50%, -50%);
+    text-align: right;
+    font-size: 22px;
+    font-weight: bold;
+    color: #2c245f;
+}
+
+/*1440X900 Devices*/
+@media screen and (max-width:1500px) {
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow: hidden;
+        padding-left: 20px;
+        }
+    
+    .nav-links{
+        padding:28px 0;
+    }
+
+    .nav-links li{
+        display: inline-block;
+        margin: 0 15px;
+    }
+
+    .nav-links li a {
+    color: #2c245f;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+    }
+
+    .nav-links li a::after{
+        content: '';
+        background: black;
+        width: 0;
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: width 0.5s;
+    }
+
+    .nav-links li a:hover::after{
+        width: 100%;
+    }
+    .nav-links li a.active {
+    background-color: lightgray;
+    color: #2c245f;
+    border-radius: 20px;
+    height: 25px;
+    }
+
+    .header img{
+        height: 45px;
+        width: 55px;
+        display: inline-block;
+    }
+    .header h1{
+        top: 18px;
+        left: 10px;
+        text-decoration: none;
+        color: #2c245f;
+        font-size: 24px;
+        display: inline-block;
+        margin-right: 700;
+    }
+/* Content */
+    .content img{
+        position: relative;
+        width: 60%;
+        height: 80%;
+        padding-top: 20;
+    }
+
+    .content h1{
+        position: absolute;
+        left: 930px;
+        top: 25%;
+        width: 90%;
+        max-width: 900px;
+        transform: translate(-50%, -50%);
+        text-align: right;
+        font-size: 78px;
+        color: #0c77bd;
+    }
+    
+    .content h2{
+        position: absolute;
+        left: 930px;
+        font-size: 78px;
+    }
+
+    .content p{
+        position: absolute;
+        width: 38%;
+        max-width: 900px;
+        font-size: 18px;
+
+    }
+
+    .signUp button.signUpButton{
+        position: absolute;
+        left: 1260px;
+        top: 58%;
+        width: 33%;
+        max-width: 250px;
+        transform: translate(-50%, -50%);
+        align-items: right;
+        background-color: #0c77bd;
+        font-size: 24px;
+        color: white;
+        padding: 10px 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-style: italic;
+        font-weight: bold;
+        text-align: right;
+        padding-right: 40px;
+        border:none;
+    }
+    
+    .signIn p{
+        position: absolute;
+        left: 1200px;
+        top: 85%;
+        width: 40%;
+        max-width: 380px;
+        transform: translate(-50%, -50%);
+        text-align: right;
+        font-size: 18px;
+        color: darkgray;
+        border: 1px solid;
+        border-top-color: #0c77bd;
+        border-top-width: 2px;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+    }
+    .signIn a{
+        position: absolute;
+        left: 1200px;
+        top: 88%;
+        width: 40%;
+        max-width: 380px;
+        transform: translate(-50%, -50%);
+        text-align: right;
+        font-size: 22px;
+        font-weight: bold;
+        color: #2c245f;
+    }
+}
+
+/*1024X906 Devices*/
+@media screen and (max-width:1024px) {
+    .header{
+        height: 100vh;
+        width: 100%;
+        padding: 0 3%;
+        position: relative;  
+    }
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow: hidden;
+        padding-left: 20px;
+        width: 100%;
+        }
+    
+    .nav-links{
+        padding:28px 0;
+        
+    }
+
+    .nav-links li{
+        display: inline-block;
+        margin: 0 15px;
+        
+    }
+
+    .nav-links li a {
+    color: #2c245f;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    
+    }
+
+    .nav-links li a::after{
+        content: '';
+        background: black;
+        width: 0;
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: width 0.5s;
+    }
+
+    .nav-links li a:hover::after{
+        width: 100%;
+    }
+    .nav-links li a.active {
+    background-color: lightgray;
+    color: #2c245f;
+    border-radius: 20px;
+    height: 25px;
+    }
+
+    .header img{
+        height: 35px;
+        width: 45px;
+        display: inline-block;
+    }
+    .header h1{
+        top: 18px;
+        left: 10px;
+        text-decoration: none;
+        color: #2c245f;
+        font-size: 18px;
+        display: inline-block;
+        margin-right: 370;
+    }
+/* Content */
+    .content img{
+        position: relative;
+        width: 55%;
+        height: 80%;
+        padding-top: 20;
+    }
+
+    .content h1{
+        position: absolute;
+        left: 530px;
+        top: 25%;
+        width: 90%;
+        max-width: 900px;
+        transform: translate(-50%, -50%);
+        text-align: right;
+        font-size: 58px;
+        color: #0c77bd;
+    }
+    
+    .content h2{
+        position: absolute;
+        left: 530px;
+        font-size: 58px;
+    }
+
+    .content p{
+        position: absolute;
+        width: 38%;
+        max-width: 900px;
+        font-size: 12px;
+
+    }
+
+    .signUp button.signUpButton{
+        position: absolute;
+        left: 900px;
+        top: 58%;
+        width: 33%;
+        max-width: 180px;
+        transform: translate(-50%, -50%);
+        align-items: right;
+        background-color: #0c77bd;
+        font-size: 16px;
+        color: white;
+        padding: 10px 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-style: italic;
+        font-weight: bold;
+        text-align: right;
+        padding-right: 40px;
+        border:none;
+    }
+    
+    .signIn p{
+        position: absolute;
+        left: 800px;
+        top: 88%;
+        width: 40%;
+        max-width: 380px;
+        transform: translate(-50%, -50%);
+        text-align: right;
+        font-size: 12px;
+        color: darkgray;
+        border: 1px solid;
+        border-top-color: #0c77bd;
+        border-top-width: 2px;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+    }
+    .signIn a{
+        position: absolute;
+        left: 800px;
+        top: 91%;
+        width: 40%;
+        max-width: 380px;
+        transform: translate(-50%, -50%);
+        text-align: right;
+        font-size: 16px;
+        font-weight: bold;
+        color: #2c245f;
+    }
+}

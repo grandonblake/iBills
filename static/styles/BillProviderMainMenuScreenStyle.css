@@ -1,0 +1,523 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100%;
+}
+
+.sideMenu{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: lightgray;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 6.25rem;
+}
+
+.menuBar{
+    display: inline-flex;
+    padding-left: 3rem;
+}
+
+.logo img{
+    position: relative;
+    height: 2.813rem;
+    width: 3.5rem;
+    top: -2.25rem;
+    left: 3rem;
+    display: inline-flex;
+}
+
+.logo h1{
+    position: relative;
+    top: -2rem;
+    left: 12rem;
+    text-decoration: none;
+    color: #2c245f;
+    font-size: 1.75rem;
+    float: left;
+    display: inline-flex;
+}
+
+.name{
+    display: block;
+}
+
+.userName{
+    position: absolute;
+    display: block;
+    font-weight: bold;
+    font-size: 1.875rem;
+    top: 4%;
+    left: 69%;
+    width: 20%;
+    text-align: right;
+}
+
+.unknownLabel{
+    position: absolute;
+    display: block;
+    color: gray;
+    font-size: 1.188em;
+    top: 9%;
+    left: 87.5%;
+}
+
+.userIcon{
+    height: 7.5%;
+    width: 4%;
+    position: absolute;
+    display: block;
+    top: 4%;
+    left: 90%;
+}
+
+.main-menu h2{
+    text-align: center;
+    letter-spacing: 7px;
+    color: #fff;
+    background-color: #111;
+    padding: 20px 0;
+}
+
+.sideMenu a{
+    padding: 0.5rem 0.5rem 0.5rem 1.75rem;
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    
+}
+
+.sideMenu a i{
+    padding-right: 10px;
+}
+
+.main-menu a:hover{
+    color: white;
+    background: lightgray;
+
+}
+
+.sideMenu .closebtn{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#menu-area{
+    transition: margin-left .5s;
+    padding: 16px;
+    display: inline-block;
+    padding: 30px 50px;
+    width: 100%;
+    height: 3.50rem;
+}
+
+.contentArea{
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15%;
+    padding-top: 7%;
+    gap: 50px;
+}
+
+.box1{
+    position: relative;
+    background-color: #1381e3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    height: 200px;
+    max-width:350px;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    cursor: default;
+}
+    .box1text1{
+        position: relative;
+        padding: 10px 5px;
+        font-size: 24px;
+        font-weight: bold;
+        
+    }
+
+    .box1text2{
+        position: relative;
+        font-size: 28px;
+        font-weight: bold;
+        top: 55px;
+        float: right;
+        height: 35px;
+        width: 35px;
+        padding: 10px;
+        background: #7ab6fe;
+        color: white;
+        border-radius: 50px;
+        border: none;
+        outline: none;
+        text-align:center;
+    }
+
+.box2{
+    position: relative;
+    background-color: #565656;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    height: 200px;
+    max-width:350px;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    cursor: default;
+}
+    .box2text1{
+        position: relative;
+        padding: 10px 5px;
+        font-size: 24px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .box2button{
+        position: relative;
+        top: 30%;
+        height: 25px;
+        padding: 15px 20px;
+        float: right;
+        background: #a7a7a7;
+        border-radius: 30px;
+    }
+
+.tabs{
+        position: absolute;
+        left: 30%;
+        top: 14%;
+        min-height: 600px;
+        min-width: 1280px;
+        clear: both;
+        margin: 25px 0;
+    }
+      
+    .tab {
+        float: left;
+      }
+      
+      .tab label {
+        padding: 10px;
+        padding-right: 80px;
+        margin-left: -10px;
+        position: relative;
+        left: 1px;
+        cursor: pointer;
+        font-size: 20px;
+        color: darkgray;
+        font-weight: bold;
+      }
+      
+      .tab [type=radio] {
+        opacity: 0;
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #888; 
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
+      
+      .content {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        background: none;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-y: visible;
+      }
+      
+      .content > * {
+        opacity: 0;
+        transform: translateX(-100%);
+        text-decoration: none;
+      }
+      
+      [type=radio]:focus ~ label {
+        color: black;
+      }
+      
+      [type=radio]:checked ~ label {
+        color: black;
+        z-index: 2;
+      }
+      
+      [type=radio]:checked ~ label ~ .content {
+        z-index: 1;
+      }
+      
+      [type=radio]:checked ~ label ~ .content > * {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+.currentBillsHeader{
+    position: fixed;
+    display: inline-flex;
+    background: #dadada;
+    top: 210px;
+    left: 30%;
+    min-width: 1000px;
+    min-height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+    .cbText1{
+        position: relative;
+        margin: 10px 10px;
+    }
+    .cbText2{
+        position: relative;
+        margin: 10px 60px;
+    }
+    .cbText3{
+        position: relative;
+        margin: 10px 75px;
+    }
+    .cbText4{
+        position: relative;
+        margin: 10px 80px;
+    }
+    .cbText5{
+        position: relative;
+        margin: 10px 10px;
+    }
+
+    .currentBillsContent{
+        position: relative;
+        display: inline-flex;
+        right: 20px;
+        min-width: 1000px;
+        min-height: 60px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 10px;
+        border: darkgray solid 3px;
+        color: black;
+    }
+    .cbCText1{
+        position: relative;
+        margin: 10px 0px;
+        width: 75px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .cbCText2{
+        position: relative;
+        margin: 10px 0px;
+        width: 280px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .cbCText3{
+        position: relative;
+        margin: 10px 0px;
+        width: 275px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .cbCText4{
+        position: relative;
+        margin: 10px 0px;
+        width: 220px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .cbCText5{
+        position: relative;
+        margin: 10px 0px;
+        width: 100px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+.paymentHistoryHeader{
+    position: fixed;
+    display: inline-flex;
+    background: #dadada;
+    top: 210px;
+    left: 30%;
+    min-width: 1000px;
+    min-height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    }
+        .phText1{
+            position: relative;
+            margin: 10px 10px;
+        }
+        .phText2{
+            position: relative;
+            margin: 10px 60px;
+        }
+        .phText3{
+            position: relative;
+            margin: 10px 75px;
+        }
+        .phText4{
+            position: relative;
+            margin: 10px 80px;
+        }
+        .phText5{
+            position: relative;
+            margin: 10px 10px;
+        }
+        .phText6{
+            position: relative;
+            margin: 10px 40px;
+        }
+    
+    .paymentHistoryContent{
+        position: relative;
+        display: inline-flex;
+        right: 20px;
+        min-width: 1000px;
+        min-height: 60px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 10px;
+        border: darkgray solid 3px;
+        color: black;
+        }
+        .phCText1{
+            position: relative;
+            margin: 10px 0px;
+            width: 75px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .phCText2{
+            position: relative;
+            margin: 10px 0px;
+            width: 280px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .phCText3{
+            position: relative;
+            margin: 10px 0px;
+            width: 275px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .phCText4{
+            position: relative;
+            margin: 10px 0px;
+            width: 220px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .phCText5{
+            position: relative;
+            margin: 10px 0px;
+            width: 100px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .phCText6{
+            position: relative;
+            margin: 10px 0px;
+            width: 150px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+    .emptyBills{
+        position: relative;
+        top: 10%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+    }
+    
+    .emptyBills h1{
+        position: relative;
+        padding: 20px 0px;
+        font-size: 40px;
+        color: gray;
+    }
+
+    .emptyPayment{
+        position: relative;
+        top: 10%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+    }
+    
+    .emptyPayment h1{
+        position: relative;
+        padding: 20px 0px;
+        font-size: 40px;
+        color: gray;
+    }
