@@ -57,9 +57,18 @@ The software used to develop the platform is Visual Studio Code. The developers 
 <img src="/screenshots/HomeScreen.png" width=75% height=75%>
 
 ### Customer
-
+<img src="/screenshots/CustomerSignInScreen.png" width=75% height=75%>
+<img src="/screenshots/CustomerSignUpScreen.png" width=75% height=75%>
+<img src="/screenshots/CustomerMainMenu.png" width=75% height=75%>
+<img src="/screenshots/CustomerBillingDetails.png" width=75% height=75%>
+<img src="/screenshots/CustomerPaymentHistory.png" width=75% height=75%>
 
 ### Bill Provider
-
+<img src="/screenshots/BillProviderOngoingBills.png" width=75% height=75%>
+<img src="/screenshots/BillProviderTransactionHistory.png" width=75% height=75%>
+<img src="/screenshots/BillProviderGenerateBill.png" width=75% height=75%>
+<img src="/screenshots/BillProviderValidatePayments.png" width=75% height=75%>
 
 ### Admin
+<img src="/screenshots/AdminMainMenu.png" width=75% height=75%>
+<img src="/screenshots/AdminCreateBillProvider.png" width=75% height=75%>
