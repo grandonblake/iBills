@@ -54,3 +54,12 @@ The software used to develop the platform is Visual Studio Code. The developers 
 <img src="/screenshots/DataModel.png" width=50% height=50%>
 
 ## Project Screenshots
+<img src="/screenshots/HomeScreen.png" width=75% height=75%>
+
+### Customer
+
+
+### Bill Provider
+
+
+### Admin
